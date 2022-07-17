@@ -1,5 +1,5 @@
 <template>
-<div class="m-keyvisual">
+<div class="o-keyvisual">
     <img src="@/assets/kv-gals.png" class="gals" />
     <img src="@/assets/kv-text.svg" class="text" />
 </div>
@@ -28,7 +28,7 @@
         transform: translateZ(0);
     }
 }
-.m-keyvisual {
+.o-keyvisual {
     width: 100%;
     height: 100vh;
     background-image: url('/cyber-4.jpg');

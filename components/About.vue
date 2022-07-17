@@ -1,6 +1,6 @@
 <template>
 <div class="o-about">
-    <div ref="targetAbout">
+    <div class="about" ref="targetAbout">
         <h2 class="title">IntersectionObserverってなあに？</h2>
         <p class="description">
             IntersectionObserverとはJavaScriptで用意されている、DOM要素の交差判定APIです。<br />
@@ -12,18 +12,18 @@
         <h3 class="title" ref="targetAboutListTitle">
             IntersectionObserverを使うといいことが!
         </h3>
-        <ul class="item-list">
+        <ul class="merit-list">
             <li class="item" ref="targetAboutListItem1">
-                <h4>testtext!</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
+                <h4 class="heading">testtext!</h4>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>
             <li class="item" ref="targetAboutListItem2">
-                <h4>testtext!</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
+                <h4 class="heading">testtext!</h4>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>
             <li class="item" ref="targetAboutListItem3">
-                <h4>testtext!</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
+                <h4 class="heading">testtext!</h4>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>
         </ul>
     </div>
@@ -38,16 +38,18 @@ const doObserve = ((elements: Ref<HTMLElement | null>[]) => {
         rootMargin: '0px',
         threshold: 0.1,
     }
-    elements.forEach((element) => {
+    elements.forEach((element, index) => {
         const observer = new IntersectionObserver((items) => {
-            items.forEach((item, index) => {
-                if (item.isIntersecting && ~element.value.className.indexOf('item')) {
+            items.forEach((item) => {
+                if (item.isIntersecting && item.target.classList.contains('item')) {
+                    const delay = 300 * index
                     setTimeout(() => {
                         item.target.classList.add('-intersecting')
-                    }, 300 * index +1)
+                    }, delay)
                 } else if (item.isIntersecting) {
                     item.target.classList.add('-intersecting')
-                    observer.disconnect()
+                } else {
+                    item.target.classList.remove('-intersecting')
                 }
             })
         }, options)
@@ -87,13 +89,64 @@ onMounted(() => {
 .o-about {
     width: 100%;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .-intersecting {
         animation: fadeIn 0.5s ease-in-out both;
     }
-    > .title {
-        margin-bottom: 16px;
-        font-size: 32px;
-        font-weight: bold;
+    > .about {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        > .title {
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        > .description {
+            margin-bottom: 32px;
+        }
+    }
+    > .melits {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        > .title {
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        > .merit-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            > .item {
+                opacity: 0;
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 4px solid #333;
+                border-radius: 8px;
+                padding: 32px;
+                &:nth-child(2) {
+                    border-color: aqua;
+                }
+                > .heading {
+                    color: #333;
+                    margin-bottom: 24px;
+                }
+            }
+        }
     }
 }
 </style>
