@@ -2,6 +2,7 @@
   <div>
     <Keyvisual />
     <About />
+    <Conclusion />
   </div>
 </template>
 <script setup lang="ts">

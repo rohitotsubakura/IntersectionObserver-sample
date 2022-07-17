@@ -13,15 +13,15 @@
             IntersectionObserverを使うといいことが!
         </h3>
         <ul class="merit-list">
-            <li class="item" ref="targetAboutListItem1">
+            <li class="item -delay" ref="targetAboutListItem1">
                 <h4 class="heading">testtext!</h4>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>
-            <li class="item" ref="targetAboutListItem2">
+            <li class="item -delay" ref="targetAboutListItem2">
                 <h4 class="heading">testtext!</h4>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>
-            <li class="item" ref="targetAboutListItem3">
+            <li class="item -delay" ref="targetAboutListItem3">
                 <h4 class="heading">testtext!</h4>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi magni aliquid, impedit consequuntur ratione necessitatibus consequatur quaerat repudiandae autem amet quas non accusamus numquam est aspernatur delectus deserunt iste facilis.</p>
             </li>

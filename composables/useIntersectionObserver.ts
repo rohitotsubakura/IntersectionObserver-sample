@@ -9,7 +9,7 @@ const doObserve = ((elements: Ref<HTMLElement | null>[]) => {
     elements.forEach((element, index) => {
         const observer = new IntersectionObserver((items) => {
             items.forEach((item) => {
-                if (item.isIntersecting && item.target.classList.contains('item')) {
+                if (item.isIntersecting && item.target.classList.contains('-delay')) {
                     const delay = 300 * index
                     setTimeout(() => {
                         item.target.classList.add('-intersecting')
