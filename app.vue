@@ -2,7 +2,11 @@
   <div>
     <Keyvisual />
     <About />
+    <Character1 />
+    <Character2 />
     <Conclusion />
+    <Detail />
+    <Footer />
   </div>
 </template>
 <script setup lang="ts">

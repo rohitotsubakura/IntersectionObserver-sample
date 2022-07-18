@@ -19,6 +19,10 @@ const doObserve = ((elements: Ref<HTMLElement | null>[]) => {
                 } else {
                     item.target.classList.remove('-intersecting')
                 }
+
+                if (item.isIntersecting && item.target.classList.contains('-once')) {
+                    observer.unobserve(element.value)
+                }
             })
         }, options)
         observer.observe(element.value!)

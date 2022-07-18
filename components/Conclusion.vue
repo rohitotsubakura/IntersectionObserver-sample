@@ -21,7 +21,7 @@ onMounted(() => {
     useIntersectionObserver().doObserve(elements)
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @keyframes fadeIn {
     from {
         opacity: 0;
