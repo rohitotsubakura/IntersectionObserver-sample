@@ -4,6 +4,6 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     target: 'static',
     app: {
-        baseURL: '/<repository-name>'
+        baseURL: '/IntersectionObserver-sample'
     }
 })
