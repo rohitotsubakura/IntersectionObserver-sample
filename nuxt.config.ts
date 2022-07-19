@@ -6,11 +6,4 @@ export default defineNuxtConfig({
     app: {
         baseURL: '/IntersectionObserver-sample'
     },
-    head: {
-      title: 'IntersectionObserverAPIサンプル',
-      htmlAttrs: {
-        lang: 'ja',
-        prefix: 'og: http://ogp.me/ns#'
-      },
-    },
 })
