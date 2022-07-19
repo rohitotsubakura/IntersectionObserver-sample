@@ -37,8 +37,9 @@
     overflow: hidden;
     position: relative;
     > .gals {
-        width: 100%;
-        height: auto;
+        height: 100vh;
+        display: block;
+        margin: 0 auto;
         animation: fadeIn 2s ease-in-out both;
     }
     > .text {
