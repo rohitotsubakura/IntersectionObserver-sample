@@ -1,0 +1,14 @@
+$sp-max-width: 768px;
+$pc-content-min-width: 1080px;
+
+@mixin sp {
+  @media screen and (max-width: $sp-max-width) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (max-width: $pc-content-min-width) {
+    @content;
+  }
+}

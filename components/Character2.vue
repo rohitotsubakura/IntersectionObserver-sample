@@ -37,6 +37,7 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+@use '@/assets/styles/mixins' as m;
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -54,6 +55,9 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include m.tb() {
+        height: auto;
+    }
     .-intersecting {
         animation: fadeIn 0.5s ease-in-out both;
     }
@@ -63,6 +67,10 @@ onMounted(() => {
         flex-direction: row-reverse;
         align-items: center;
         justify-content: space-around;
+        @include m.sp() {
+            flex-direction: column;
+            justify-content: center;
+        }
         > .text-container {
             margin: 0 auto;
             display: flex;
@@ -89,8 +97,12 @@ onMounted(() => {
         }
         > .image-container {
             opacity: 0;
+            margin: 0 auto;
+            @include m.sp() {
+                height: 100vh;
+            }
             > .image {
-                height: 80%;
+                height: 100%;
                 width: auto;
             }
         }

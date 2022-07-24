@@ -6,4 +6,11 @@ export default defineNuxtConfig({
     app: {
         baseURL: '/IntersectionObserver-sample'
     },
+    vite: {
+      server: {
+        watch: {
+          usePolling: true, 
+        },
+      },
+    },
 })

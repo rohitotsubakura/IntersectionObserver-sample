@@ -50,7 +50,8 @@ onMounted(() => {
     useIntersectionObserver().doObserve(elements)
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+@use '@/assets/styles/mixins' as m;
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -68,6 +69,9 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include m.tb() {
+        height: auto;
+    }
     .-intersecting {
         animation: fadeIn 0.5s ease-in-out both;
     }
@@ -78,10 +82,17 @@ onMounted(() => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include m.tb() {
+            padding: 32px 4%;
+        }
         > .title {
             margin-bottom: 16px;
             font-size: 32px;
             font-weight: bold;
+            @include m.sp() {
+                word-break: break-all;
+                font-size: 28px;
+            }
         }
         > .description {
             margin-bottom: 32px;
@@ -98,11 +109,18 @@ onMounted(() => {
             margin-bottom: 16px;
             font-size: 32px;
             font-weight: bold;
+            @include m.sp() {
+                font-size: 28px;
+                word-break: break-all;
+            }
         }
         > .merit-list {
             display: flex;
             align-items: center;
             justify-content: space-around;
+            @include m.sp() {
+                flex-direction: column;
+            }
             > .item {
                 opacity: 0;
                 width: 30%;
@@ -113,6 +131,10 @@ onMounted(() => {
                 border: 4px solid #333;
                 border-radius: 8px;
                 padding: 32px;
+                @include m.sp() {
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
                 &:nth-child(2) {
                     border-color: aqua;
                 }

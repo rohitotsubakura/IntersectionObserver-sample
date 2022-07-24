@@ -41,6 +41,7 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+@use '@/assets/styles/mixins' as m;
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -59,6 +60,9 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     position: relative;
+    @include m.sp() {
+        height: 100vh;
+    }
     &::after {
         position: absolute;
         content: '';
@@ -67,7 +71,7 @@ onMounted(() => {
         background: url('@/assets/kv-gals.png');
         filter: brightness(0.4);
         background-color: rgba(51, 51, 51, 0.5) ;
-        background-position: top;
+        background-position: top center;
         background-size: cover;
         z-index: -1;
     }
@@ -104,6 +108,9 @@ onMounted(() => {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include m.sp() {
+                flex-direction: column;
+            }
             > .item {
                 opacity: 0;
                 width: 240px; 
@@ -116,6 +123,10 @@ onMounted(() => {
                 &:first-child {
                     background-color: #41C9B4;
                     margin-right: 24px;
+                    @include m.sp() {
+                        margin-right: 0;
+                        margin-bottom: 24px;
+                    }
                 }
                 &:last-child {
                     background-color: #333;

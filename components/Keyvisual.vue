@@ -1,6 +1,8 @@
 <template>
 <div class="o-keyvisual">
-    <img src="@/assets/kv-gals.png" class="gals" />
+    <div class="bg-container">
+        <img src="@/assets/kv-gals.png" class="gals" />
+    </div>
     <img src="@/assets/kv-text.svg" class="text" />
 </div>
 </template>
@@ -8,6 +10,7 @@
 
 </script>
 <style lang="scss">
+@use '@/assets/styles/mixins' as m;
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -36,11 +39,25 @@
     background-size: cover;
     overflow: hidden;
     position: relative;
-    > .gals {
+    > .bg-container {
+        width: 100%;
         height: 100vh;
-        display: block;
-        margin: 0 auto;
-        animation: fadeIn 2s ease-in-out both;
+            @include m.sp() {
+                width: 100%;
+                background-image: url('@/assets/kv-gals.png');
+                background-position: 45% center;
+                background-size: cover;
+                overflow: hidden;
+            }
+        > .gals {
+            height: 100vh;
+            display: block;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-in-out both;
+            @include m.sp() {
+                display: none;
+            }
+        }
     }
     > .text {
         z-index: 2;
@@ -51,6 +68,10 @@
         right: 0;
         margin: auto;
         animation: push 1s ease-out both;
+        @include m.sp() {
+            bottom: 40%;
+            filter: drop-shadow(0 0 5px #333)
+        }
     }
 }
 </style>

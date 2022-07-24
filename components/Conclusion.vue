@@ -22,6 +22,7 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+@use '@/assets/styles/mixins' as m;
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -53,6 +54,9 @@ onMounted(() => {
             font-size: 32px;
             font-weight: bold;
             text-align: center;
+            @include m.sp() {
+                font-size: 20px;
+            }
         }
     }
 }
