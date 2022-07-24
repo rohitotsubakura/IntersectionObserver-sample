@@ -12,7 +12,7 @@
     <div class="button-container">
         <ul class="link-list">
             <li class="item -delay" ref="targetDetailNote">
-                <a href="/" target="_blank">note記事</a>
+                <a href="https://note.com/tech_hikky/n/nf5b44b4b1bf7" target="_blank">note記事</a>
             </li>
             <li class="item -delay" ref="targetDetailMDN">
                 <a href="https://developer.mozilla.org/ja/docs/Web/API/Intersection_Observer_API" target="_blank">
