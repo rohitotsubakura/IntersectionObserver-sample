@@ -1,0 +1,16 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-3e7cf0f2.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "css": [
+      "entry.4bc95449.css"
+    ],
+    "assets": [
+      "kv-gals.54eb3c19.png",
+      "kv-text.909bc498.svg",
+      "gal-annna.59821876.png",
+      "gal-tsukasa.c22bf9ff.png"
+    ]
+  }
+}
